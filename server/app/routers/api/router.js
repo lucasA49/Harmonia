@@ -2,14 +2,11 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-// Import And Use Routers Here
-/* ************************************************************************* */
+// Import the programs router
+const programsRouter = require("./programs/router");
 
-const itemsRouter = require("./items/router");
+// Use the programs router for routes starting with /programs
+router.use("/programs", programsRouter);
 
-router.use("/items", itemsRouter);
-
-/* ************************************************************************* */
-
+// Export the main router
 module.exports = router;
