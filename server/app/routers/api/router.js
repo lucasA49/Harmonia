@@ -1,12 +1,17 @@
-const express = require("express");
+const express = require('express')
 
-const router = express.Router();
+const router = express.Router()
 
-// Import the programs router
-const programsRouter = require("./programs/router");
+/* ************************************************************************* */
+// Define Your API Routes Here
+/* ************************************************************************* */
 
-// Use the programs router for routes starting with /programs
-router.use("/programs", programsRouter);
+// eslint-disable-next-line import/no-useless-path-segments
+const categoriesRouter = require('../../routers/api/categories/routeur'); // Chemin mis à jour
 
-// Export the main router
+// Utiliser le routeur des catégories
+router.use('/categories', categoriesRouter);
+
+/* ************************************************************************* */
+
 module.exports = router;
